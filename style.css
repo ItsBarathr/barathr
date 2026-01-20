@@ -493,7 +493,7 @@ ul {
 /* Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -628,24 +628,33 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 3rem;
     }
 
+    .hero-content {
+        order: 2;
+    }
 
+    .hero-visual {
+        order: 1;
+        height: 400px;
+        transform: scale(0.9);
+    }
 
     .hero-btns {
         justify-content: center;
     }
 
-    .hero-visual {
-        display: none;
-        /* Simplify on smaller screens or adjust */
-    }
-
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     .contact-container {
@@ -660,7 +669,32 @@ footer {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-visual {
+        height: 350px;
+        transform: scale(0.8);
+    }
+
+    .glass-card {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .web-card {
+        top: 10%;
+        left: 0%;
+    }
+
+    .mobile-card {
+        top: 50%;
+        right: -5%;
+    }
+
+    .backend-card {
+        bottom: 10%;
+        left: 10%;
     }
 
     .nav-links {
@@ -668,15 +702,21 @@ footer {
         /* Implement hamburger logic in JS */
         flex-direction: column;
         position: absolute;
-        top: var(--nav-height);
-        right: 0;
+        top: 80px;
+        left: 0;
         width: 100%;
-        background: rgba(20, 20, 30, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 100vh;
+        background: rgba(5, 5, 17, 0.98);
+        backdrop-filter: blur(20px);
+        padding-top: 4rem;
+        border-radius: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
+        gap: 2.5rem;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
 
     .nav-links.active {
@@ -685,6 +725,43 @@ footer {
 
     .hamburger {
         display: block;
+        z-index: 1001;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-img-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .glass-card {
+        display: none;
+        /* Hide floating cards on very small screens to avoid clutter */
+    }
+
+    .contact-container {
+        padding: 1.5rem;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
 
